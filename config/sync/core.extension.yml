@@ -11,6 +11,7 @@ module:
   image: 0
   jsonapi: 0
   jsonapi_extras: 0
+  jsonapi_stuff: 0
   link: 0
   node: 0
   page_cache: 0

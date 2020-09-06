@@ -121,9 +121,12 @@ resourceFields:
     fieldName: body
     publicName: description
     enhancer:
-      id: nested
+      id: body
       settings:
-        path: processed
+        include_processed: '1'
+        processed_name: full
+        include_summary: '1'
+        summary_name: summary
     disabled: false
   field_birthdate:
     fieldName: field_birthdate
@@ -143,5 +146,8 @@ resourceFields:
     fieldName: field_image
     publicName: image
     enhancer:
-      id: ''
+      id: file
+      settings:
+        include_url: '1'
+        url_name: url
     disabled: false

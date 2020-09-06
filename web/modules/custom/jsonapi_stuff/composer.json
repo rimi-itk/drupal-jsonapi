@@ -1,0 +1,21 @@
+{
+    "name": "custom/jsonapi_stuff",
+    "description": "JSON:API stuff",
+    "type": "drupal-custom-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mikkel Ricky",
+            "email": "rimi@aarhus.dk"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "drupal/jsonapi_extras": "^3.16"
+    }
+}

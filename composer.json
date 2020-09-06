@@ -8,19 +8,30 @@
         "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
         "chat": "https://www.drupal.org/node/314178"
     },
-    "repositories": [
-        {
+    "repositories": {
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "custom/jsonapi_stuff": {
+            "type": "path",
+            "url": "web/modules/custom/jsonapi_stuff",
+            "options": {
+                "symlink": false
+            }
         }
-    ],
+    },
     "require": {
         "composer/installers": "^1.9",
+        "custom/jsonapi_stuff": "*",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
-        "drupal/jsonapi_extras": "^3.16",
         "drush/drush": "^10.3"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+        "drupal/coder": "^8.3.10"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -83,5 +94,22 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "ln -sf ../../scripts/git/hooks/pre-commit .git/hooks/pre-commit"
+        ],
+        "coding-standards-check/phpcs": [
+            "vendor/bin/phpcs --standard=phpcs.xml.dist"
+        ],
+        "coding-standards-check": [
+            "@coding-standards-check/phpcs"
+        ],
+        "coding-standards-apply/phpcs": [
+            "vendor/bin/phpcbf --standard=phpcs.xml.dist"
+        ],
+        "coding-standards-apply": [
+            "@coding-standards-apply/phpcs"
+        ]
     }
 }

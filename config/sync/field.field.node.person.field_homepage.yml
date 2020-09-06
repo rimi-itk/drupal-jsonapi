@@ -1,0 +1,23 @@
+uuid: 82ca068c-15ab-4088-8900-e5350385de70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_homepage
+    - node.type.person
+  module:
+    - link
+id: node.person.field_homepage
+field_name: field_homepage
+entity_type: node
+bundle: person
+label: Homepage
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link
